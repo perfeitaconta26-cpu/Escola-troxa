@@ -2,20 +2,24 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Buscador Inteligente</title>
+    <title>Mini Navegador</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
-    <div class="tabs">
-        <button class="tab active">Nova Aba</button>
+    <div class="tabs" id="tabs">
+        <div class="tab active" onclick="switchTab(this)">
+            Nova Aba
+            <span onclick="closeTab(event, this)">✖</span>
+        </div>
+        <button class="add-tab" onclick="addTab()">＋</button>
     </div>
 </header>
 
 <main>
     <div class="search-container">
-        <h1>Buscador Inteligente</h1>
+        <h1>Mini Navegador</h1>
         <input type="text" id="searchInput" placeholder="Pesquisar...">
         <button onclick="search()">Buscar</button>
     </div>

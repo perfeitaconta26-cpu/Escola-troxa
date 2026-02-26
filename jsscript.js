@@ -1,8 +1,8 @@
 function search() {
-    const input = document.getElementById("searchInput").value.toLowerCase();
+    const input = document.getElementById("searchInput").value.toLowerCase().trim();
     const content = document.getElementById("content");
 
-    if (input === "matematica") {
+    if (input === "matematica" || input === "matemática") {
         content.innerHTML = generateMathContent();
     } 
     else if (input === "chatgpt") {
@@ -14,38 +14,43 @@ function search() {
 }
 
 function generateMathContent() {
-    let text = "<h2>Matemática - Estudo Avançado</h2>";
+    let text = "<h2>Matemática - Estudo Completo</h2>";
 
-    text += `
-    <h3>Números Reais</h3>
-    <p>Os números reais incluem racionais e irracionais...</p>
-    <p>Os números racionais podem ser escritos como fração...</p>
-    <p>Os irracionais possuem infinitas casas decimais...</p>
-
-    <h3>Álgebra</h3>
-    <p>Monômios são expressões algébricas com um único termo...</p>
-    <p>Polinômios são compostos por vários termos...</p>
-    <p>Produtos notáveis como (a+b)² são fundamentais...</p>
-    <p>Sistemas de equações permitem encontrar valores desconhecidos...</p>
-
-    <h3>Geometria</h3>
-    <p>A congruência de triângulos ocorre quando possuem lados e ângulos iguais...</p>
-    <p>Círculos possuem raio, diâmetro e circunferência...</p>
-    <p>Volumes são calculados para prismas, cilindros e esferas...</p>
-
-    <h3>Estatística</h3>
-    <p>Média é a soma dividida pela quantidade...</p>
-    <p>Moda é o valor que mais aparece...</p>
-    <p>Mediana é o valor central...</p>
-
-    <h3>Grandezas</h3>
-    <p>Regra de três composta resolve problemas com mais de duas grandezas...</p>
-    <p>Proporção compara razões equivalentes...</p>
-    `;
-
-    for (let i = 0; i < 200; i++) {
-        text += "<p>A matemática desenvolve o raciocínio lógico, fortalece a capacidade de resolver problemas e é essencial para ciência, tecnologia e engenharia.</p>";
+    for (let i = 0; i < 150; i++) {
+        text += `
+        <p>
+        A matemática aprofunda o estudo dos números reais (racionais e irracionais),
+        intensifica a álgebra com monômios, polinômios, produtos notáveis e sistemas
+        de equações, além de desenvolver a geometria envolvendo congruência de
+        triângulos, círculos, áreas e volumes. Também explora estatística com média,
+        moda e mediana, além de grandezas e regra de três composta.
+        </p>
+        `;
     }
 
     return text;
+}
+
+function addTab() {
+    const tabs = document.getElementById("tabs");
+
+    const newTab = document.createElement("div");
+    newTab.classList.add("tab");
+    newTab.innerHTML = `Nova Aba <span onclick="closeTab(event, this)">✖</span>`;
+    newTab.onclick = function() { switchTab(newTab); };
+
+    tabs.insertBefore(newTab, tabs.lastElementChild);
+    switchTab(newTab);
+}
+
+function switchTab(tab) {
+    const allTabs = document.querySelectorAll(".tab");
+    allTabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+}
+
+function closeTab(event, span) {
+    event.stopPropagation();
+    const tab = span.parentElement;
+    tab.remove();
 }

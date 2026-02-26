@@ -11,20 +11,34 @@ header {
 
 .tabs {
     display: flex;
+    align-items: center;
 }
 
 .tab {
     background: #303134;
     color: white;
-    border: none;
     padding: 10px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.tab span {
+    margin-left: 10px;
+    color: red;
     cursor: pointer;
 }
 
 .tab.active {
     background: white;
     color: black;
-    border-radius: 8px 8px 0 0;
+}
+
+.add-tab {
+    padding: 8px 15px;
+    cursor: pointer;
 }
 
 .search-container {
@@ -65,6 +79,12 @@ button {
 .jogos-container {
     text-align: center;
     margin-top: 100px;
+}
+
+.voltar {
+    margin: 20px;
+    background: #202124;
+    color: white;
 }
 
 .center {
