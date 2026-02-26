@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+header {
+    background: #202124;
+    padding: 10px;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
+    background: #303134;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: white;
+    color: black;
+    border-radius: 8px 8px 0 0;
+}
+
+.search-container {
+    text-align: center;
+    margin-top: 80px;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#content {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.jogos-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4285F4;
+    color: white;
+}
+
+.jogos-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.center {
+    text-align: center;
+}
